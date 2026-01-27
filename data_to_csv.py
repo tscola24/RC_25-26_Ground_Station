@@ -15,6 +15,7 @@ except Exception as err:
     print(err)
     sys.exit()
 
+#Declare default vals
 header_column_names = ['time','air_pressure', 'altitude','acceleration','payload_temp','rotation_rate', 'descent_rate']
 time_ = 0
 air_pressure = 30
@@ -25,7 +26,7 @@ rotation_rate = 6
 descent_rate = -10
 
 
-
+#Creates new csv file in the data folder
 with open(csv_file_path_name, 'w') as csv_file:
     csv_writer = csv.DictWriter(csv_file, fieldnames=header_column_names)
     csv_writer.writeheader()
@@ -44,7 +45,7 @@ while True:
             'rotation_rate' : rotation_rate,
             'descent_rate' : descent_rate
         }
-
+        # Adds new data to the csv file
         csv_writer.writerow(info)
         print(time_,air_pressure, altitude,acceleration,payload_temp,rotation_rate, descent_rate)
 

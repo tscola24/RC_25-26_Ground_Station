@@ -13,6 +13,9 @@ n_columns = round((len(measures)/n_rows))
 fig, axes = plt.subplots(nrows=n_rows, ncols=n_columns, figsize=(12,8))
 fig.set_facecolor("#AAC2E7")
 
+# Func: updateDisplay:
+# Checks the csv file for a new-line of data,
+# Then updates each graph with the new data
 def updateDisplay(frame_number):
     try:
         data = pd.read_csv(csv_file_path_name)
